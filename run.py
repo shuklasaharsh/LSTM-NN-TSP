@@ -50,16 +50,14 @@ def main():
         normalise=configs['data']['normalise']
     )
 
-    '''
-	# in-memory training
-	model.train(
-		x,
-		y,
-		epochs = configs['training']['epochs'],
-		batch_size = configs['training']['batch_size'],
-		save_dir = configs['model']['save_dir']
-	)
-	'''
+    """
+    in-memory training
+    model.train(x,y,
+    epochs = configs['training']['epochs'],
+    batch_size = configs['training']['batch_size'],
+    save_dir = configs['model']['save_dir'])
+    """
+
     # out-of memory generative training
     steps_per_epoch = math.ceil(
         (data.len_train - configs['data']['sequence_length']) / configs['training']['batch_size'])
